@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5205402343695920",
+            "id": "adb676e9f0f92f51",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Content Outline.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "52701ff0d2daf5c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AWS Terms and Acronyms.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "056c73d7aeac5432",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technical Terms.md",
+                "file": "Domain 1 Design Secure Architectures/Design secure access to AWS resources.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Content Outline.md",
+                "file": "Domain 1 Design Secure Architectures/Design secure access to AWS resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Content Outline.md",
+                "file": "Domain 1 Design Secure Architectures/Design secure access to AWS resources.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Content Outline.md"
+                "file": "Domain 1 Design Secure Architectures/Design secure access to AWS resources.md"
               }
             }
           }
@@ -170,14 +146,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5205402343695920",
+  "active": "adb676e9f0f92f51",
   "lastOpenFiles": [
-    "Design secure access to AWS resources.md",
-    "Pasted image 20230817161531.png",
-    "Technical Terms.md",
-    "Untitled.canvas",
     "Content Outline.md",
+    "Images/Pasted image 20230817161531.png",
+    "Images",
     "AWS Terms and Acronyms.md",
-    "Pasted image 20230817155912.png"
+    "Terms/AWS Terms and Acronyms.md",
+    "Terms/Technical Terms.md",
+    "Terms",
+    "New folder",
+    "Domain 4 Design Cost-Optimized Architectures/Design cost-optimized storage solutions.md",
+    "Domain 4 Design Cost-Optimized Architectures/Design cost-optimized compute solutions.md",
+    "Domain 4 Design Cost-Optimized Architectures/Design cost-optimized database solutions.md",
+    "Domain 4 Design Cost-Optimized Architectures/Design cost-optimized network architectures.md",
+    "Domain 4 Design Cost-Optimized Architectures",
+    "Domain 3 Design High-Performing Architectures/Determine high-performing and scalable network architectures.md",
+    "Domain 3 Design High-Performing Architectures/Determine high-performing data ingestion and transformation solutions.md",
+    "Domain 3 Design High-Performing Architectures/Determine high-performing and scalable storage solutions.md",
+    "Domain 3 Design High-Performing Architectures/Design high-performing and elastic compute solutions.md",
+    "Domain 3 Design High-Performing Architectures/Determine high-performing database solutions.md",
+    "Domain 3 Design High-Performing Architectures",
+    "Domain 2 Design Resilient Architectures/Design scalable and loosely coupled architectures.md",
+    "Domain 2 Design Resilient Architectures/Design highly available and fault tolerant architectures.md",
+    "Domain 2 Design Resilient Architectures",
+    "Domain 1 Design Secure Architectures/Design secure access to AWS resources.md",
+    "Domain 1 Design Secure Architectures/Design secure workloads and applications.md",
+    "Domain 1 Design Secure Architectures/Determine appropriate data security controls.md",
+    "Domain 1 Design Secure Architectures",
+    "Design cost-optimized network architectures.md",
+    "Design cost-optimized database solutions.md",
+    "Design cost-optimized compute solutions.md",
+    "Design cost-optimized storage solutions.md",
+    "Determine high-performing data ingestion and transformation solutions.md",
+    "Determine high-performing and scalable network architectures.md",
+    "Determine high-performing database solutions.md",
+    "Untitled.canvas",
+    "Images/Pasted image 20230817155912.png"
   ]
 }

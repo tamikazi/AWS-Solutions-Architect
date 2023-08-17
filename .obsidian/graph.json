@@ -5,18 +5,54 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
-  "collapse-display": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"Domain 1 Design Secure Architectures\"",
+      "color": {
+        "a": 1,
+        "rgb": 14048348
+      }
+    },
+    {
+      "query": "path:\"Domain 2 Design Resilient Architectures\"",
+      "color": {
+        "a": 1,
+        "rgb": 14069084
+      }
+    },
+    {
+      "query": "path:\"Domain 3 Design High-Performing Architectures\"",
+      "color": {
+        "a": 1,
+        "rgb": 6076630
+      }
+    },
+    {
+      "query": "path:\"Domain 4 Design Cost-Optimized Architectures\"",
+      "color": {
+        "a": 1,
+        "rgb": 6084188
+      }
+    },
+    {
+      "query": "path:Terms",
+      "color": {
+        "a": 1,
+        "rgb": 12344534
+      }
+    }
+  ],
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
+  "nodeSizeMultiplier": 1.56660899653979,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "collapse-forces": false,
+  "centerStrength": 0.378892733564014,
+  "repelStrength": 12.7681660899654,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 1.9655560456566734,
+  "linkDistance": 278,
+  "scale": 1.1840535873752072,
   "close": true
 }
