@@ -1,0 +1,25 @@
+---
+aliases:
+- DNS
+- JSON
+- SDK
+- API
+---
+
+- **DNS**: *Domain Name System*
+	- translates human friendly hostnames into the machine IP addresses
+	- ![[Pasted image 20230817155912.png]]
+	- **Domain Registrar**: Amazon Route 53, GoDaddy, etc.
+	- **DNS Records**:
+		- **A**: maps hostname to IPv4
+		- **AAAA**: maps hostname to IPv6
+		- **CNAME**: maps hostname to another hostname
+			- target domain name must have A or AAAA record
+			- can't create record for the top node of a DNS namespace (Zone Ape)
+- **JSON**: JavaScript Object Notation
+	- lightweight format for storing and transporting data
+	- data in name/value pairs
+- **SDK**: Software Development Kit
+	- set of tools for third-party developers to use in the producing applications using a particular framework
+- **API**: Application Programming Interface
+	- software intermediary that allows two applications to talk to each other
