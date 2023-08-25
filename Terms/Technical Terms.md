@@ -4,18 +4,42 @@ aliases:
 - JSON
 - SDK
 - API
+- VPC
+- Public IP
+- Private IP
+- Elastic IP
+- IOPS
+- NFS
+- TCP
+- UDP
+- SSL
+- TLS
+- SSH
 ---
+# Ports to know
+- 22 = SSH (Secure Shell) - log into a Linux instance
+- 21 = FTP (File Transfer Protocol) – upload files into a file share
+- 22 = SFTP (Secure File Transfer Protocol) – upload files using SSH
+- 80 = HTTP – access unsecured websites
+- 443 = HTTPS – access secured websites
+- 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
 
-- **DNS**: *Domain Name System*
+# Terms
+- **DNS**: Domain Name System
 	- translates human friendly hostnames into the machine IP addresses
-	- ![[Pasted image 20230817155912.png]]
+	![[Pasted image 20230817155912.png]]
 	- **Domain Registrar**: Amazon Route 53, GoDaddy, etc.
 	- **DNS Records**:
-		- **A**: maps hostname to IPv4
-		- **AAAA**: maps hostname to IPv6
-		- **CNAME**: maps hostname to another hostname
+		- ***A***: maps hostname to IPv4
+		- ***AAAA***: maps hostname to IPv6
+		- ***CNAME***: maps hostname to another hostname
 			- target domain name must have A or AAAA record
 			- can't create record for the top node of a DNS namespace (Zone Ape)
+		- ***NS – Name Servers for the Hosted Zone***: control how traffic is routed for a domain
+		- ***Zone File***: contains DNS records
+		- ***Name Server***: resolves DNS queries (Authoritative or Non-Authoritative)
+		- ***Top Level Domain (TLD)***: .com, .us, .in, .gov, .org, …
+		- ***Second Level Domain (SLD)***: amazon.com, google.com
 - **JSON**: JavaScript Object Notation
 	- lightweight format for storing and transporting data
 	- data in name/value pairs
@@ -23,3 +47,38 @@ aliases:
 	- set of tools for third-party developers to use in the producing applications using a particular framework
 - **API**: Application Programming Interface
 	- software intermediary that allows two applications to talk to each other
+- **VPC**: Virtual Private Cloud
+	- on-demand configurable pool of shared resources allocated within a public cloud environment
+- **IPv4**: most common, ex. 1.160.10.240
+- **IPv6**: newer, used for IoT, ex. 3ffe:1900:4545:3:200:f8ff:fe21:67cf
+- **Public IP**
+	- the machine can be identified on the internet
+	- must be unique
+	- can be geo-located easily
+- **Private IP**
+	- can only be identified on a private network
+	- must be unique withing the private network
+- **Elastic IP**
+	- public IPv4 you own as long as you don't delete it
+	- can only attach to one instance at a time
+	- useful for masking the failure of an instance or software by remapping the address to another instance
+	- max 5
+	- **avoid this**
+- **IOPS**: input/output operations per second
+	- unit of measurement for storage system performance based on drive speed and workload type
+- **NFS**: network file system
+	- allows users to access files over a computer network
+- **TCP**: Transmission Control Protocol
+	- standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+	- email, texting, file transfer, web browsing
+- **UDP**: User Datagram Protocol
+	- used to send messages to other hosts on an Internet Protocol network. Within an IP network, UDP does not require prior communication to set up communication channels or data paths.
+	- live streaming, online gaming, video chat
+- **SSL**: Secure Sockets Layer
+	- encrypt connections
+- **TLS**: Transport Layer Security
+	- newer version of SSL, but people still refer to it as SSL
+- **SSH**: Secure Shell Protocol
+	- cryptographic network protocol for operating network services securely over an unsecured network
+	- its most notable applications are remote login and command-line execution 
+	- SSH applications are based on a client–server architecture, connecting an SSH client instance with an SSH server.

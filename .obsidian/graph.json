@@ -1,5 +1,5 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": false,
   "showAttachments": false,
@@ -25,34 +25,34 @@
       "query": "path:\"Domain 3 Design High-Performing Architectures\"",
       "color": {
         "a": 1,
-        "rgb": 6076630
+        "rgb": 6084190
       }
     },
     {
       "query": "path:\"Domain 4 Design Cost-Optimized Architectures\"",
       "color": {
         "a": 1,
-        "rgb": 6084188
+        "rgb": 8871126
       }
     },
     {
       "query": "path:Terms",
       "color": {
         "a": 1,
-        "rgb": 12344534
+        "rgb": 6084269
       }
     }
   ],
   "collapse-display": false,
-  "showArrow": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.56660899653979,
-  "lineSizeMultiplier": 1,
+  "nodeSizeMultiplier": 2.99083044982699,
+  "lineSizeMultiplier": 3.36384083044983,
   "collapse-forces": false,
-  "centerStrength": 0.378892733564014,
-  "repelStrength": 12.7681660899654,
-  "linkStrength": 1,
-  "linkDistance": 278,
-  "scale": 1.1840535873752072,
+  "centerStrength": 0.396193771626298,
+  "repelStrength": 13.9446366782007,
+  "linkStrength": 0.679930795847751,
+  "linkDistance": 500,
+  "scale": 1.1840535873752063,
   "close": true
 }
