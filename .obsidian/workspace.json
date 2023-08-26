@@ -71,11 +71,9 @@
             "id": "10178fbdaa9310d6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/Pasted image 20230825163735.png"
               }
             }
           },
@@ -112,7 +110,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -178,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
+                "file": "Images/Pasted image 20230825163735.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -195,7 +193,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
+                "file": "Images/Pasted image 20230825163735.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -218,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md"
+                "file": "Images/Pasted image 20230825163735.png"
               }
             }
           }
@@ -239,25 +237,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "42e1787a3309402e",
+  "active": "ce1ce8583a0effd8",
   "lastOpenFiles": [
-    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
-    "Domain 3 Design High-Performing Architectures/Database solutions.md",
-    "Pasted image 20230825212252.png",
-    "Summaries.md",
-    "Pasted image 20230825211655.png",
-    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
     "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
+    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
+    "Domain 3 Design High-Performing Architectures/Database solutions.md",
+    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
+    "Images/Pasted image 20230825212252.png",
+    "Summaries.md",
+    "Images/Pasted image 20230825211655.png",
     "Content Outline.md",
-    "Pasted image 20230825205856.png",
-    "Pasted image 20230825205732.png",
-    "Pasted image 20230825205501.png",
-    "Pasted image 20230825204503.png",
-    "Pasted image 20230825203945.png",
-    "Pasted image 20230825202718.png",
+    "Images/Pasted image 20230825205856.png",
+    "Images/Pasted image 20230825205732.png",
+    "Images/Pasted image 20230825205501.png",
+    "Images/Pasted image 20230825204503.png",
+    "Images/Pasted image 20230825203945.png",
+    "Images/Pasted image 20230825202718.png",
     "Domain 3 Design High-Performing Architectures/Data ingestion and transformation solutions.md",
-    "Pasted image 20230825202333.png",
-    "Pasted image 20230825202051.png",
+    "Images/Pasted image 20230825202333.png",
+    "Images/Pasted image 20230825202051.png",
     "Domain 4 Design Cost-Optimized Architectures/Storage solutions.md",
     "Domain 3 Design High-Performing Architectures/Scalable storage solutions.md",
     "Terms/Technical Terms.md",

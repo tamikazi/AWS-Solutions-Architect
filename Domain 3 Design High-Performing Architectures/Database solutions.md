@@ -222,3 +222,4 @@ aliases:
 - adds or update data in the cache when written to a DB (no stale data)
 ### Session Store
 - store temporary session data in a cache using TTL features
+# DynamoDB
