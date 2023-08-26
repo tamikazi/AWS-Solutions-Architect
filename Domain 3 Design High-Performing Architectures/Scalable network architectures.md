@@ -3,6 +3,7 @@ aliases:
 - EC2
 - ENI
 - AMI
+- CloudFront
 ---
 # EC2: Elastic Compute Cloud
 - infrastructure as a service
@@ -99,4 +100,34 @@ aliases:
 	- stop instance (data integrity)
 	- build AMI (also creates [[Scalable storage solutions|EBS]] snapshots)
 	- launch instances from other AMIs
-	- 
+# CloudFront
+- content delivery network (CDN)
+- improves read performance, content is cached at the edge
+- 216 point of presence globally (edge locations)
+- DDoS protection
+- files are cached for a TTL (maybe a day)
+- great for static content that must be available everywhere
+![[Pasted image 20230825173830.png]]
+![[Pasted image 20230825184410.png]]
+## Geo Restriction
+- can have allow and block lists based on country
+## Price Classes
+- **All**: all regions - best performance
+- **200**: most regions, excludes most expensive regions
+- **100**: only the least expensive regions
+## Cache Invalidation
+- can force entire or partial cache refresh (bypassing TTL)
+![[Pasted image 20230825184821.png]]
+# Global Accelerator
+- 2 [[Technical Terms|Anycast IP]] are created for your app
+- send traffic directly to edge locations and then directly to your app
+![[Pasted image 20230825185204.png]]
+- works with [[Technical Terms|Elastic IP]], EC2, [[Scalable and loosely coupled architectures|ALB]], [[Scalable and loosely coupled architectures|NLB]], public or private
+- consistence performance
+- health checks
+- security
+## Functions
+- lightweight functions written in JavaScript
+- for high scale, latency sensitive CDN customizations
+- millions of request per second
+- native to CloudFront

@@ -15,6 +15,7 @@ aliases:
 - SSL
 - TLS
 - SSH
+- Anycast IP
 ---
 # Ports to know
 - 22 = SSH (Secure Shell) - log into a Linux instance
@@ -82,3 +83,5 @@ aliases:
 	- cryptographic network protocol for operating network services securely over an unsecured network
 	- its most notable applications are remote login and command-line execution 
 	- SSH applications are based on a client–server architecture, connecting an SSH client instance with an SSH server.
+- **Unicast IP**: one server holds one IP
+- **Anycast IP**: all servers hold the same IP address and the client is routed to the closest one

@@ -1,3 +1,10 @@
+---
+aliases:
+- RDS
+- Aurora
+- ElastiCache
+- DynamoDB
+---
 # EC2 Instance Store
 - high performance hardware disk
 - better I/O performance

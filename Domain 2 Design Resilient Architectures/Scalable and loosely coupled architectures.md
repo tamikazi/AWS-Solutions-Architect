@@ -4,6 +4,14 @@ aliases:
 - ALB
 - NLB
 - GLB
+- Transfer Family
+- SQS
+- SNS
+- ECS
+- EKS
+- Fargate
+- ECR
+- Lambda
 ---
 # Elastic Load Balancer (ELB)
 - servers that forward traffic to multiple servers downstream
@@ -120,5 +128,227 @@ aliases:
 - requires client to indicate the hostname of the target server and the initial SSL handshake
 - only works for ALB, NLB and CloudFront
 ![[Pasted image 20230818160112.png]]
+# Transfer Family
+- fully managed service for file transfers into and out of [[Scalable storage solutions|S3]] or [[Scalable storage solutions|EFS]] using FTP, FTPS or SFTP
+- managed, scalable, reliable, highly available
+- pay per provisioned endpoint per hour + data transfers in GB
+- store and manage user credentials
+- integrate with existing authentication systems
+![[Pasted image 20230825193714.png]]
+# Standard Queue (SQS)
+- fully managed used to decouple apps
+- unlimited throughput, unlimited # of messages in queue
+- low latency
+- limit of 256KB per message
+- can have dupes and out of order messages
+## Producing Messages
+- message is persisted until consumer deletes
+- retained for 4-14 days
+- ex. send order to be processed, order id, customer id, etc.
+## Consuming Messages
+- consumers: EC2, servers, Lambda
+- poll for messages (receive up to 10 at one time)
+- process messages
+- delete messages
+### EC2
+- consumers receive and process messages in parallel
+- at least once delivery
+- best effort message ordering
+- consumers delete messages after processing
+- can scale out
+![[Pasted image 20230825195157.png]]
+## Security
+### Encryption
+- in flight using HTTPS
+- at rest using KMS keys
+- client side
+### Access Controls
+- [[Secure access to AWS resources|IAM]] policies to regulate access to the SQS API
+### Access Policies
+- useful for cross account access to SQS
+- and allow other services (SNS, [[Scalable storage solutions|S3]]) to write an SQS queue
+## Message Visibility Timeout
+- after a message is polled, it becomes invisible to other consumers
+- default 30s
+- if message is not processed within visibility timeout, it will be processed twice
+- consumer could call **ChangeMessageVisibility** API to get more time
+![[Pasted image 20230825195530.png]]
+## Long Polling
+- when consumer requests messages, it can optionally wait for messages to arrive if there are none in the queue
+- decreases number of API calls made to SQS while increasing the efficiency and reducing latency of your app
+- between 1-20s
+- can be enabled at queue level or API level
+## FIFO Queue
+- limited to 300 msg/s, batched 3000 msg/s
+- exactly one send, removes dupes
+- processed in order by consumer
+- if load is too big, some transactions may be lost
+# SNS
+- send 1 message to many receivers
+- event producer sends message to 1 SNS topic
+- subscribers (event receivers) to each topic will get the messages
+- up to 12.5 million subs per topic
+- 100k topic limit
+## How to Publish
+### Topic Publish
+- create topic
+- create sub
+- publish to topic
+### Direct Publish
+- create platform app
+- create platform endpoint
+- publish to platform endpoint
+## Encryption
+- in flight using HTTPS
+- at rest using KMS keys
+- client side
+### Access Controls
+- [[Secure access to AWS resources|IAM]] policies to regulate access to the SNS API
+### Access Policies
+- useful for cross account access to SNS
+- and allow other services ([[Scalable storage solutions|S3]]) to write an SNS topic
+## Message Filtering
+- JSON policy used to filter messages sent to SNS topic's subs
+- if a sub doesn't have a filter policy, it receives every message
+![[Pasted image 20230825201115.png]]
+# Fan out
+- use SNS + SQS
+- fully decoupled, no data loss
+- SQS allows data persistence, delayed processing, and retries of work
+- ability to add more SQS subs over time
+- make sure SQS access policy allows for SNS to write
+- cross-region delivery: works with SQS in other regions
+- can only have SQS FIFO as a sub
+![[Pasted image 20230825200838.png]]
+![[Pasted image 20230825200901.png]]
+# Elastic Container Service (ECS)
+- container platform
+- launch Docker containers = ECS tasks on ECS clusters
+- can use [[Scalable and loosely coupled architectures|ALB]] and [[Scalable and loosely coupled architectures|NLB]]
+## EC2 launch type
+- must provision and maintain the instances
+- each instance must run the ECS agent to register in the ECS cluster
+![[Pasted image 20230825203945.png]]
+## Fargate Launch Type
+- serverless container platform, works with ECS and EKS
+- do not need to provision, no instances to manage
+- serverless
+- just create task definitions
+- can increase number of tasks to scale
+## IAM Roles
+### EC2 Instance Profile
+- used by ECS agent
+- makes API calls to CloudWatch Logs
+- pull Docker Image from ECR
+- reference sensitive data in Secrets Manager or SSM Parameter Store
+### Task Role
+- allow each task to have a specific role
+- use different roles for different ECS services you run
+- defined in the **task definition**
+![[Pasted image 20230825204503.png]]
+## Data Volumes (EFS)
+- works on both launch types
+- tasks running in any AZ will share the same data in the EFS file system
+- Fargate + EFS = serverless
+- useful for persistent multi AZ shared storage for your containers
+- cannot use [[Scalable storage solutions|S3]]
+## Service Auto Scaling
+- auto increase/decrease # of tasks
+- **Target Tracking**: scale based on target value for CloudWatch Metric
+- **Step Scaling**: based on specified CloudWatch alarm
+- **Scheduled Scaling**: based on specified data/time
+### EC2 Instances
+- accommodate by adding EC2 instances
+#### ASG Scaling
+- based on CPU utilization
+- add instances over time
+#### ECS Cluster Capacity Provider
+- used to automatically provision and scale the infrastructure for ECS tasks
+- paired with ASG
+- add instances when missing capacity (CPU, RAM)
+![[Pasted image 20230825205501.png]]
+
+# Elastic Kubernetes Service (EKS)
+- managed Kubernetes clusters
+- Kubernetes is an open-source system for automatic deployment, scaling and management of containerized (usually Docker) application
+- It’s an alternative to ECS, similar goal but different API
+- supports EC2 and Fargate
+- used for migration from on premises
+![[Pasted image 20230825205856.png]]
+## Node Types
+### Managed
+- creates and maanges Nodes (EC2 instances) for you
+- Nodes are part of ASG managed by EKS
+- supports on-demand or spot instances
+### Self Managed
+- created by you and managed by an ASG
+- can use prebuilt AMI (EKS Optimized)
+- supports on-demand or spot instances
+### Fargate
+- no maintenance, no Nodes managed
+## Data Volumes
+- [[Scalable storage solutions|EBS]]
+- [[Scalable storage solutions|EFS]]
+- [[Storage solutions|FSx]] Lsutre
+- [[Storage solutions|FSx]] NetApp ONTAP
+# Fargate
+
+# Elastic Container Registry (ECR)
+- store and manage docker images
+- access controlled through [[Secure access to AWS resources|IAM]]
+- supports image vulnerability scanning, versioning, image tags, image lifecycle, etc.
+![[Pasted image 20230825205732.png]]
+# Lambda
+- virtual functions, no servers
+- on demand
+- scaling is automated
+- Integrated with the whole AWS suite of services
+- 10GB of RAM
+- default is launched outside of [[Technical Terms|VPC]]
+	- must define VPC ID, subnets and security groups
+	- Lambda will create [[Scalable network architectures|ENI]] in your subnets
+![[Pasted image 20230825212252.png]]
+## Limits per region
+### Execution
+- Memory allocation: 128 MB – 10GB (1 MB increments)
+- Maximum execution time: 900 seconds (15 minutes)
+- Environment variables (4 KB)
+- Disk capacity in the “function container” (in /tmp): 512 MB to 10GB
+- Concurrency executions: 1000 (can be increased)
+### Deployment
+- Lambda function deployment size (compressed .zip): 50 MB
+- Size of uncompressed deployment (code + dependencies): 250 MB
+- Can use the /tmp directory to load other files at startup
+- Size of environment variables: 4 KB
+## Customization at the Edge
+### Edge Function
+- code to attach to CloudFront distributions
+- runs close to users to minimize latency
+- written in NodeJS or Python
+- 1000s of requests per second
+- used to **change** [[Scalable network architectures|CloudFront]] requests and responses
+- author functions in 1 region
+#### Uses
+- Website Security and Privacy
+- Dynamic Web Application at the Edge
+- Search Engine Optimization (SEO)
+- Intelligently Route Across Origins and Data Centers
+- Bot Mitigation at the Edge
+- Real-time Image Transformation
+- A/B Testing
+- User Authentication and Authorization
+- User Prioritization
+- User Tracking and Analytics
+## RDS Proxy
+- if it directly access the database, it may open too many connections under a high load
+- this improves scalability by pooling and sharing DB connections
+- improve scalability by pooling and sharing DB connections
+- improve security by enforcing [[Secure access to AWS resources|IAM]]
+- must be deployed in VPC since **RDS Proxy server is never publicly accessible**
+## Invoking from RDS and Aurora
+- process data events from within a database
+- support for [[Database solutions|RDS]] for PostgreSQL and [[Database solutions|Aurora]] MySQL
+- must allow outbound traffic to the functions from within the DB (Public, NAT GW, VPC Endpoint)
+- DB must have required permissions to invoke the function (Lambda Resource based Policy and IAM policy)
 
 
