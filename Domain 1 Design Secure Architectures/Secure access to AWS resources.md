@@ -2,6 +2,7 @@
 aliases:
 - AZ
 - IAM
+- Organization
 ---
 # AWS Regions
 - A region is a cluster of data centers
@@ -89,3 +90,66 @@ aliases:
 - use access keys for programmatic access
 - audit permissions using Security Tools
 
+## AWS Organizations
+- global service
+- able to manage multiple AWS accounts
+- main account is the management account
+- member accounts can only be part of one organization
+- consolidated billing across all accounts
+- pricing benefits
+![[Pasted image 20230827133411.png]]
+## Service Control Policies
+- IAM policies applied to the OU or accounts to restrict users and roles
+- do not apply to the management account (full admin power)
+- must have explicit allow (does not allow anything by default like IAM)
+![[Pasted image 20230827133605.png]]
+## IAM Roles vs. Resource Based Policies
+- Cross Account: can use resource based policy OR using a Role as a proxy
+- when you assume a role, you give up your original permissions and take the permissions assigned to the role
+- when using a resource based policy, the principal doesn't have to give up permissions
+## Permission Boundaries
+- supported for users and roles NOT groups
+- use a managed policy to set the maximum permissions an IAM entity can get
+![[Pasted image 20230827134413.png]]
+### Uses
+- delegate responsibilities with non admins, ex. create new IAM users
+- allow developers to self assign policies and manage their own permissions while making sure they can't make themselves an admin
+- restrict one specific user instead of a whole account using Organizations and SCP
+# IAM Identity Center
+- one login for all AWS accounts in all AWS Organizations
+- identity providers: built in identity store, 3rd party
+![[Pasted image 20230827134948.png]]
+## Fine-grained Permissions and Assignments
+### Multi Account Permissions
+- manage access across AWS accounts in your AWS Org
+- Permissions Sets: collection of one or more IAM policies assigned to users and groups to define AWS access
+### Application Assignments
+- SSO access to many SAML 2.0 business applications
+- provide required URLs, certificates and metadata
+### Attribute Based Access Control (ABAC)
+- permissions based on users' attributes stored in IAM Identity Center Identity Store
+- uses: define permissions once then modify AWS access by changing the attributes
+![[Pasted image 20230827135621.png]]
+### Microsoft Active Directory
+- database of objects: user accounts, computers, printers, file shares, security groups
+- centralized security management, create account, assign permissions
+- objects organized in trees
+### Directory Services
+#### Managed Microsoft AD
+- create your own AD in AWS, manage users locally, supports MFA
+#### AD Connector
+- directory gateway to redirect on-premise AD, supports MFA
+#### Simple AD
+- AD compatible managed directory on AWS
+- cannot be joined with on premise AD
+# Control Tower
+- set up and govern a secure a compliant multi account AWS environment
+- uses AWS organizations to create accounts
+- automate set up of environment in a few clicks
+- automate ongoing policy management using guardrails
+- detect policy violations and remediate them
+- monitor compliance through interactive dashboard
+## Guardrails
+- **Preventative**: using SCPs (restrict across all your accounts)
+- **Detective Guardrail**: using AWS Config (identify untagged resources)
+![[Pasted image 20230827140711.png]]

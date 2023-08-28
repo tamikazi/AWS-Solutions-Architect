@@ -3,6 +3,11 @@ aliases:
 - Storage Gateway
 - DataSync
 - Kinesis
+- Athena
+- QuickSight
+- Glue
+- Lake Formation
+- OpenSearch
 ---
 # Storage Gateway
 - bridging on-premises and cloud data
@@ -86,6 +91,12 @@ aliases:
 ![[Pasted image 20230825202333.png]]
 ## Analytics
 - analyze data streams with SQL or Apache Flink
+- add reference data from [[Scalable storage solutions|S3]] to enrich streaming data
+- fully managed, no servers
+- auto scaling
+- pay for actual consumption rate
+- output: Streams or Firehose
+- uses: time-series analytics, real time dashboards, real time metrics
 ## Video Streams
 - capture, process and store video streams
 ## Ordering Data
@@ -102,3 +113,59 @@ aliases:
 	- 100 Group ID
 	- up to 100 Consumers (due to the 100 Group ID)
 	- up to 300 messages per second (or 3000 if using batching)
+# Athena
+- serverless query service to analyze data stored in [[Scalable storage solutions|S3]]
+- uses SQL language
+- supports CSV, JSON, ORC, Avro and Parquet
+- $5 per TB scanned
+## Performance Improvements
+- use columnar data (less scan)
+- compress data for smaller retrievals
+- partition datasets for east querying on virtual columns
+- use larger files to minimize overhead
+## Federated Query
+- allows you to run SQL queries across data stored in relational, non-relational, object and custom data sources
+![[Pasted image 20230826172745.png]]
+# OpenSearch
+- search any field, even partial matches
+- common usage to compliment another DB
+- does not natively support SQL but can be enabled
+- managed and serverless cluster available
+- ingestion from [[Data ingestion and transformation solutions|Kinesis]] firehose, AWS IoT, and **CloudWatch Logs**
+![[Pasted image 20230826173839.png]]
+![[Pasted image 20230826173900.png]]
+# QuickSight
+- Serverless machine learning-powered business intelligence service to create
+interactive dashboards
+- Integrated with [[Database solutions|RDS]], [[Database solutions|Aurora]], [[Data ingestion and transformation solutions|Athena]], [[Database solutions|Redshift]], [[Scalable storage solutions|S3]], etc.
+![[Pasted image 20230826174329.png]]
+## Dashboard and Analysis
+- can define users and groups
+- **dashboard** is read only snapshot of an analysis that you can share and preserves configuration
+- users can also see the underlying data
+# Glue
+- managed extract, transform and load (ETL) service
+- to prepare and transform data for analytics
+- serverless
+![[Pasted image 20230826174710.png]]
+![[Pasted image 20230826174748.png]]
+- **Job Bookmarks**: prevent re-processing old data
+- **Elastic Views**:
+	- Combine and replicate data across multiple data stores using SQL
+	- No custom code, Glue monitors for changes in the source data, serverless
+	- Leverages a “virtual table” (materialized view)
+- **DataBrew**: clean and normalize data using pre-built transformation
+- **Studio**: new GUI to create, run and monitor ETL jobs in Glue
+- **Streaming ETL** (built on Apache Spark Structured Streaming):
+compatible with Kinesis Data Streaming, Kafka, MSK (managed Kafka)
+# Lake Formation
+- data lake is a central place to have all your data for analytics purposes
+- fully managed
+- discover, cleanser, transform and ingest data
+- combine structured and unstructured data
+![[Pasted image 20230826175151.png]]
+# Managed Streaming for Apache Kafka (MSK)
+- Kinesis alternative
+- fully managed
+- able to be serverless
+![[Pasted image 20230826175652.png]]

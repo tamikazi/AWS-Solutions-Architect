@@ -1,6 +1,7 @@
 ---
 aliases:
 - ASG 
+- EMR
 ---
 # Auto Scaling Group (ASG)
 - goal is to automatically scale in/out to address the load
@@ -46,3 +47,13 @@ aliases:
 ## Scaling Cooldowns
 - after scaling activity, you will be in cooldown where ASG will not launch or terminate additional instances (to allow for metrics to stabilize)
 - use AMI to reduce configuration time in order to serve requests faster and reduce cooldown period
+# Elastic MapReduce (EMR)
+- helps creating Hadoop clusters to analyze big data
+- useful for data processing, machine learning, web indexing
+- Master Node: Manage the cluster, coordinate, manage health – long running
+- Core Node: Run tasks and store data – long running
+- Task Node (optional): Just to run tasks – usually Spot
+- Purchasing options:
+	- On-demand: reliable, predictable, won’t be terminated
+	- Reserved (min 1 year): cost savings (EMR will automatically use if available)
+	- Spot Instances: cheaper, can be terminated, less reliable

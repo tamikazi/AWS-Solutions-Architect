@@ -1,3 +1,11 @@
+---
+aliases:
+- Route 53
+- DR
+- DMS
+- Backup
+- Discovery Service
+---
 # Amazon RDS Proxy
 - fully managed database proxy for RDS
 - allows apps to pool and share DB connections established with the database
@@ -112,3 +120,130 @@
 - can't access private endpoints
 - can create CloudWatch Metric, associate with Alarm, then create health check for the alarm itself
 ![[Pasted image 20230819180638.png]]
+# Disaster Recovery (DR)
+## RPO and RTO
+![[Pasted image 20230827171829.png]]
+## Strategies
+![[Pasted image 20230827171856.png]]
+### Backup and Restore
+- high RPO
+![[Pasted image 20230827171946.png]]
+### Pilot Light
+- small version of app is always running in the cloud
+- useful for the critical core
+- faster than backup and restore as critical systems are already up
+![[Pasted image 20230827172111.png]]
+### Warm Standby
+- full system is up but at minimum size
+- can scale to production load
+![[Pasted image 20230827172152.png]]
+### Multi Site / Hot Site
+- very low RTO, very expensive
+- full production scale is running on AWS
+![[Pasted image 20230827172241.png]]
+# Database Migration Service (DMS)
+- migrate DB to AWS
+- source DB remains available during migration
+- continuous data replication using CDC
+- MUST create EC2 to perform the task
+![[Pasted image 20230827172522.png]]
+## Sources and Targets
+### Sources
+- On-Premises and EC2 instances databases: Oracle, MS SQL Server, MySQL, MariaDB, PostgreSQL, MongoDB, SAP, DB2
+- Azure: Azure SQL Database
+- Amazon RDS: all including Aurora
+- Amazon S3
+- DocumentDB
+### Targets
+- On-Premises and EC2 instances databases: Oracle, MS SQL Server, MySQL, MariaDB, PostgreSQL, SAP
+- Amazon RDS
+- Redshift, DynamoDB, S3
+- OpenSearch Service
+- Kinesis Data Streams
+- Apache Kafka
+- DocumentDB & Amazon Neptune
+- Redis & Babelfish
+## Schema Conversion Tool
+- convert DB schema from one engine to another
+- Example OLTP: (SQL Server or Oracle) to MySQL, PostgreSQL, Aurora
+- Example OLAP: (Teradata or Oracle) to Amazon Redshift
+![[Pasted image 20230827172821.png]]
+## Multi AZ
+- DMS provisions and maintains a synchronously stand replica in a different AZ
+- provides data redundancy
+- eliminates I/O freezes
+- minimizes latency spikes
+## RDS and Aurora MySQL Migrations
+- use DMS if both databases are up and running
+### RDS to Aurora
+#### Option 1
+- DB snapshot from [[Database solutions|RDS]] restored as [[Database solutions|Aurora]]
+#### Option 2
+- create [[Database solutions|Aurora]] read replica from [[Database solutions|RDS]] and when replication lag is 0, promote as its own DB cluster
+### External MySQL to Aurora
+#### Option 1
+- use Percona XtraBackup to create file backup in [[Scalable storage solutions|S3]]
+- create [[Database solutions|Aurora]] DB from [[Scalable storage solutions|S3]]
+#### Option 2
+- create [[Database solutions|Aurora]] DB
+- use mysqldump utility to migrate into [[Database solutions|Aurora]] (slower than option 1)
+## RDS and Aurora PostgreSQL Migrations
+### RDS to Aurora
+#### Option 1
+- DB Snapshots from RDS restored as Aurora DB
+#### Option 2
+- Create an Aurora Read Replica from your RDS, and when the replication lag is 0, promote it as its own DB cluster (can take time and cost $)
+### External PostgreSQL to Aurora
+- Create a backup and put it in Amazon S3
+- Import it using the aws_s3 Aurora extension
+- Use DMS if both databases are up and running
+# Backup
+- centrally manage and automate backups across services
+- Supported Services:
+	- [[Scalable network architectures|EC2]]/[[Scalable storage solutions|EBS]]
+	- [[Scalable storage solutions|S3]]
+	- [[Database solutions|RDS]]/[[Database solutions|Aurora]]/[[Database solutions|DynamoDB]]
+	- [[Database solutions|DocumentDB]]/Neptune
+	- [[Scalable storage solutions|EFS]]/[[Storage solutions|FSx]]
+	- [[Data ingestion and transformation solutions|Storage Gateway]]
+- supports cross region and account backups
+- on demand and scheduled
+- backup policies known as Backup Plans
+	- frequency
+	- window
+	- transition to cold storage
+	- retention period
+- sent to [[Scalable storage solutions|S3]]
+## Vault Lock
+- WORM state for all backups
+- cannot be deleted
+# Discovery Service
+- plan migration projects by gathering information about on premises data centers
+## Agentless
+- VM inventory, configuration and performance history
+## Agent based
+- system configuration, performance, running processes and details of network connections between systems
+# Application Migration Service
+- Lift-and-shift (rehost) solution which simplify migrating applications to AWS
+- Converts your physical, virtual, and cloud-based servers to run natively on AWS
+- Supports wide range of platforms, Operating Systems, and databases
+- Minimal downtime, reduced costs
+![[Pasted image 20230827174517.png]]
+# VMware Cloud
+- migrate your VMware vSphere based workloads to AWS
+# Transferring Large Amounts of Data
+Example: transfer 200 TB of data in the cloud. We have a 100 Mbps internet
+connection.
+## Over the internet / Site-to-Site VPN
+- Immediate to setup
+- Will take 200(TB)x1000(GB)x1000(MB)x8(Mb)/100 Mbps = 16,000,000s = 185d
+## Over direct connect 1Gbps
+- Long for the one-time setup (over a month)
+- Will take 200(TB)x1000(GB)x8(Gb)/1 Gbps = 1,600,000s = 18.5d
+## Over Snowball
+- Will take 2 to 3 snowballs in parallel
+- Takes about 1 week for the end-to-end transfer
+- Can be combined with DMS
+
+- For on-going replication / transfers: Site-to-Site VPN or DX with DMS or
+DataSync

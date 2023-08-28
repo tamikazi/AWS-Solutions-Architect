@@ -12,6 +12,12 @@ aliases:
 - Fargate
 - ECR
 - Lambda
+- API Gateway
+- Step Functions
+- CloudWatch
+- EventBridge
+- CloudTrail
+- Config
 ---
 # Elastic Load Balancer (ELB)
 - servers that forward traffic to multiple servers downstream
@@ -350,5 +356,166 @@ aliases:
 - support for [[Database solutions|RDS]] for PostgreSQL and [[Database solutions|Aurora]] MySQL
 - must allow outbound traffic to the functions from within the DB (Public, NAT GW, VPC Endpoint)
 - DB must have required permissions to invoke the function (Lambda Resource based Policy and IAM policy)
-
-
+# API Gateway
+- serverless
+- support for WebSocket protocol
+- handle API versioning
+- handle different environments
+- security
+- transform and validate requests and responses
+- generate SDK and API specs
+- cache API responses
+- expose any AWS API
+## Lambda
+- easy way to expose REST API backed by [[Scalable and loosely coupled architectures|Lambda]]
+## HTTP
+- expose HTTP endpoints in the backend
+- ex. internal HTTP API on premise, [[Scalable and loosely coupled architectures|ALB]]
+## Endpoint Types
+### Edge-Optimized (default)
+- for global clients
+- requests are routed through [[Scalable network architectures|CloudFront]] Edge locations
+- gateway still lives in only 1 region
+### Regional
+- for clients within the same region
+- could manually combine with [[Scalable network architectures|CloudFront]]
+### Private
+- can only access from your [[Technical Terms|VPC]] using interface VPC endpoint (ENI)
+- use as resource policy to define access
+## Security
+### User Authentication 
+- IAM Roles
+- Cognito (external users)
+- custom authorizer
+### Custom Domain Name HTTPS
+- through **ACM**
+- if using Edge optimized, certificate must be in us-east-1
+- if using regional, certificate must be in API gateway region
+- must set up CNAME or A-alias in [[Highly available and fault tolerant architectures|Route 53]]
+# Step Functions
+- build serverless visual workflow to orchestrate [[Scalable and loosely coupled architectures|Lambda]] functions
+- integrate with [[Scalable and loosely coupled architectures|ECS]], [[Scalable network architectures|EC2]], on premise servers, [[Scalable and loosely coupled architectures|API Gateway]], [[Scalable and loosely coupled architectures|SQS]], etc.
+- can have human approval feature
+- useful for order fulfilment, data processing, web apps
+![[Pasted image 20230826171151.png]]
+# CloudWatch
+## Metrics
+- provides metrics for every service
+- 30 dimensions per metric
+- metrics have timestamps
+- can create dashboard and have custom metrics
+### Streams
+- continually stream metrics to a destination of your choice
+- can filter
+![[Pasted image 20230826181235.png]]
+## Logs
+- groups: usually representing an app
+- stream: instances within app/ log files/ containers
+- can define expiration
+- can send to [[Scalable storage solutions|S3]], [[Data ingestion and transformation solutions|Kinesis]], [[Scalable and loosely coupled architectures|Lambda]], [[Data ingestion and transformation solutions|OpenSearch]]
+- encrypted by default and can set up KMS
+- can be exported to [[Scalable storage solutions|S3]]
+	- not real time
+- need to run CW agent on [[Scalable network architectures|EC2]] to push log files
+### Sources
+- SDK, CloudWatch Logs Agent, CloudWatch Unified Agent
+- Elastic Beanstalk: collection of logs from application
+- [[Scalable and loosely coupled architectures|ECS]]: collection from containers
+- [[Scalable and loosely coupled architectures|Lambda]]: collection from function logs
+- VPC Flow Logs: VPC specific logs
+- API Gateway
+- CloudTrail based on filter
+- [[Highly available and fault tolerant architectures|Route 53]]: Log DNS queries
+![[Pasted image 20230826181646.png]]
+![[Pasted image 20230826181719.png]]
+### Subscriptions
+- real time log events for processing and analysis
+- send to [[Data ingestion and transformation solutions|Kinesis]] or [[Scalable and loosely coupled architectures|Lambda]]
+- can be multi account and multi region
+![[Pasted image 20230826181915.png]]
+## Unified Agent
+- Collected directly on your Linux server / EC2 instance
+- CPU (active, guest, idle, system, user, steal)
+- Disk metrics (free, used, total), Disk IO (writes, reads, bytes, iops)
+- RAM (free, inactive, used, total, cached)
+- Netstat (number of TCP and UDP connections, net packets, bytes)
+- Processes (total, dead, bloqued, idle, running, sleep)
+- Swap Space (free, used, used %)
+## Alarms
+- to trigger notifications
+- states: OK, INSUFFICIENT_DATA, ALARM
+- 10s, 30s or multiples of 60s
+### Targets
+- EC2 terminate, reboot, or recover
+- trigger auto scaling action
+- [[Scalable and loosely coupled architectures|SNS]]
+### Composite Alarms
+- AND and OR conditions
+![[Pasted image 20230826182453.png]]
+## Container Insights
+- collect, aggregate summarize metrics and logs from containers
+- available for [[Scalable and loosely coupled architectures|ECS]], [[Scalable and loosely coupled architectures|EKS]], [[Scalable and loosely coupled architectures|Fargate]]
+## Lambda Insights
+- monitor and troubleshoot apps on [[Scalable and loosely coupled architectures|Lambda]]
+- collects, summarizes and aggregates system level metrics and diagnostics
+## Contributor Insights
+- analyze log data and create time series that display contributor data
+	- see metrics of the top N contributors
+- helps find top talkers and understand who or what is impacting performance
+## Application Insights
+- automated dashboard to show potential problems with monitored apps and isolate ongoing issues
+- powered by SageMaker
+# EventBridge
+- schedule [[Scalable and loosely coupled architectures|Lambda]]
+- event rules to react to a service doing something
+![[Pasted image 20230826182721.png]]
+## Schema Registry
+- analyze events in bus and infer the schema
+- allows to generate code for your app that will know in advance how the data is structured in the event bus
+- schema can be versioned
+## Security
+- when a rule runs, it needs permissions on the target
+- resource-based policy: [[Scalable and loosely coupled architectures|Lambda]], [[Scalable and loosely coupled architectures|SNS]], [[Scalable and loosely coupled architectures|SQS]], [[Scalable and loosely coupled architectures|CloudWatch]] Logs, [[Scalable and loosely coupled architectures|API Gateway]]
+- IAM role: [[Data ingestion and transformation solutions|Kinesis]] stream, Systems manager, [[Scalable and loosely coupled architectures|ECS]] task
+# CloudTrail
+- Provides governance, compliance and audit for your AWS Account
+- Get an history of events / API calls made within your AWS Account by:
+	- Console
+	- SDK
+	- CLI
+	- AWS Services
+- can put into CloudWatch Logs or [[Scalable storage solutions|S3]]
+- can be applied to all regions or a single region
+![[Pasted image 20230826183549.png]]
+## Events
+- retained for 90 days
+- send to [[Scalable storage solutions|S3]] to keep beyond this
+### Management
+- operations that are performed on resources in your account
+### Data
+- by default, data events are not logged
+- [[Scalable storage solutions|S3]] object level security
+- [[Scalable and loosely coupled architectures|Lambda]] function execution
+## Insights
+- detect unusual activity in your account
+- analyzes normal events to create baseline then continuously analyzes write events to detect unusual patterns
+- sent to [[Scalable storage solutions|S3]]
+- [[Scalable and loosely coupled architectures|EventBridge]] event is generated for automation needs
+# Config
+- helps with auditing and recording compliance of your resources
+- Questions that can be solved by AWS Config:
+	- Is there unrestricted SSH access to my security groups?
+	- Do my buckets have any public access?
+	- How has my ALB configuration changed over time?
+- receive [[Scalable and loosely coupled architectures|SNS]] notifications
+- per region service
+- aggregated across regions and accounts
+- can store in [[Scalable storage solutions|S3]]
+## Rules
+- managed and custom rules available
+- can be evaluated/ triggered per change or at regular time intervals
+- **does not prevent action from happening**
+![[Pasted image 20230826184519.png]]
+### Remediations
+- can automate remediation of non-compliance using SSM automation
+- can set remediation retries

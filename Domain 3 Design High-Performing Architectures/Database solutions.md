@@ -4,6 +4,8 @@ aliases:
 - Aurora
 - ElastiCache
 - DynamoDB
+- DocumentDB
+- Redshift
 ---
 # EC2 Instance Store
 - high performance hardware disk
@@ -223,3 +225,100 @@ aliases:
 ### Session Store
 - store temporary session data in a cache using TTL features
 # DynamoDB
+- made of tables
+- each table has primary key
+- can have infinite items
+- max size is 400KB
+- Data types supported:
+	- Scalar: string, number, binary, Boolean, null
+	- Document types: list, map
+	- Set types: string set, num set, binary set
+- TTL - auto delete items after expiry timestamp
+## Capacity Modes
+### Provisioned Mode
+- specify reads/writes per second
+- plan beforehand
+- pay for what is provisioned
+- able to add autoscaling
+### On Demand Mode
+- read/write auto scales
+- pay per use, more expensive
+- good for unpredictable workloads
+## Accelerator (DAX)
+- fully managed, highly available, in memory cache
+- solves read congestion
+- default 5 min TTL
+## Stream Processing
+- ordered stream of item-level modifications (create/delete/update)
+- uses:
+	- React to changes in real-time (welcome email to users)
+	- Real-time usage analytics
+	- Insert into derivative tables
+	- Implement cross-region replication
+	- Invoke AWS Lambda on changes to your DynamoDB table
+- 24 hour retention
+- limited # of consumers
+- can use [[Scalable and loosely coupled architectures|Lambda]] trigger or [[Data ingestion and transformation solutions|Kinesis]] adapter to process
+## Global Tables
+![[Pasted image 20230826165114.png]]
+- accessible with low latency in multiple regions
+- must enable Streams as pre-requisite
+## Backups for disaster recovery
+- continuous backups using PITR
+	- optionally enabled for the last 35 days
+	- creates new table
+- on demand
+	- full back up for long term retention until explicitly deleted
+	- doesn't affect performance or latency
+	- creates new table
+## Integration with S3
+### Export
+- works for any point in time in last 35 days
+- doesn't affect read capacity
+- perform data analysis
+- retain snapshots for auditing
+- export in JSON or ION format
+### Import
+- import CSV, JSON or ION
+- doesn't consume write capacity
+- creates new table
+- import errors logged in CloudWatch logs
+# DocumentDB
+- for MongoDB
+	- used to store, query, and index JSON data
+- fully managed, highly available, reps across 3 AZ
+- storage auto grows from 10GB to 64TB
+# Neptune
+- graph database
+- think "social network"
+# Keyspaces
+- for Apache Cassandra
+# QLDB
+- Quantum Ledger Database
+- recording financial transactions
+# Timestream
+- time series database
+# Redshift
+- based on PostgreSQL but not used for OLTP
+- used for online analytical processing (OLAP)
+- 10x better performance than other data warehouses
+- columnar storage of data
+- pay as you go
+- SQL interface
+## Cluster
+- Leader Node: for query planning, results aggregation
+- Compute Node: performing queries, send results to leader
+- provision node in advance
+- can use reserved instances for cost savings
+![[Pasted image 20230826173200.png]]
+## Snapshots and DR
+- supports multi AZ for some clusters
+- snapshots are point in time backups of a cluster stored internally in [[Scalable storage solutions|S3]]
+	- only what has changed is saved
+- restore snapshot into a new cluster
+- has automated and manual
+![[Pasted image 20230826173403.png]]
+## Spectrum
+- query data that is already in S3 without loading it
+- query is then submitted to thousands of Spectrum nodes
+![[Pasted image 20230826173513.png]]

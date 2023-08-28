@@ -4,6 +4,7 @@ aliases:
 - ENI
 - AMI
 - CloudFront
+- Global Accelerator
 ---
 # EC2: Elastic Compute Cloud
 - infrastructure as a service

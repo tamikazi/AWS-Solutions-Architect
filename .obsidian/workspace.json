@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1667e90501104c13",
+            "id": "a9e969e81e62dd7d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,43 +20,31 @@
             }
           },
           {
-            "id": "30862eca990e00de",
+            "id": "a3ba8f744d80c6b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
+                "file": "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "42e1787a3309402e",
+            "id": "ea5c1987a4a0ea87",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
+                "file": "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e55226ed3edba1db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2936309456a27abd",
+            "id": "b40364260153d0e0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -68,12 +56,26 @@
             }
           },
           {
-            "id": "10178fbdaa9310d6",
+            "id": "848c0595b048c4a0",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Pasted image 20230825163735.png"
+                "file": "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a31414ce01061073",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -93,9 +95,19 @@
             "id": "706dfd05ac5bd12b",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/Pasted image 20230826165114.png"
+              }
+            }
+          },
+          {
+            "id": "3fb436ed056ff5d5",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Content Outline.md",
+                "file": "Extras/Extras.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +122,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -139,7 +151,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rds",
+                "query": "organiza",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -176,7 +188,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/Pasted image 20230825163735.png",
+                "file": "Extras/Extras.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +205,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/Pasted image 20230825163735.png",
+                "file": "Extras/Extras.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -216,7 +228,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/Pasted image 20230825163735.png"
+                "file": "Extras/Extras.md"
               }
             }
           }
@@ -237,35 +249,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce1ce8583a0effd8",
+  "active": "3fb436ed056ff5d5",
   "lastOpenFiles": [
-    "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
-    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
-    "Domain 3 Design High-Performing Architectures/Database solutions.md",
-    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
-    "Images/Pasted image 20230825212252.png",
-    "Summaries.md",
-    "Images/Pasted image 20230825211655.png",
+    "Extras/Extras.md",
+    "Images/Pasted image 20230826165114.png",
     "Content Outline.md",
-    "Images/Pasted image 20230825205856.png",
-    "Images/Pasted image 20230825205732.png",
-    "Images/Pasted image 20230825205501.png",
-    "Images/Pasted image 20230825204503.png",
-    "Images/Pasted image 20230825203945.png",
-    "Images/Pasted image 20230825202718.png",
+    "Summaries.md",
+    "Domain 2 Design Resilient Architectures/Highly available and fault tolerant architectures.md",
+    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
+    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
+    "Domain 1 Design Secure Architectures/Appropriate data security controls.md",
+    "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
+    "Images/Pasted image 20230827180125.png",
+    "Images/Pasted image 20230827180103.png",
+    "Images/Pasted image 20230827180041.png",
+    "Images/Pasted image 20230827175834.png",
+    "Images/Pasted image 20230827175743.png",
+    "Images/Pasted image 20230827175724.png",
+    "Images/Pasted image 20230827175707.png",
+    "Images/Pasted image 20230827175154.png",
+    "Images/Pasted image 20230827175139.png",
+    "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
+    "Domain 3 Design High-Performing Architectures/Database solutions.md",
+    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
     "Domain 3 Design High-Performing Architectures/Data ingestion and transformation solutions.md",
-    "Images/Pasted image 20230825202333.png",
-    "Images/Pasted image 20230825202051.png",
+    "Domain 3 Design High-Performing Architectures/Elastic compute solutions.md",
+    "Untitled.md",
+    "Extras",
+    "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
     "Domain 4 Design Cost-Optimized Architectures/Storage solutions.md",
     "Domain 3 Design High-Performing Architectures/Scalable storage solutions.md",
     "Terms/Technical Terms.md",
-    "Domain 2 Design Resilient Architectures/Highly available and fault tolerant architectures.md",
-    "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
     "Domain 4 Design Cost-Optimized Architectures/Cost-optimized database solutions.md",
-    "Domain 3 Design High-Performing Architectures/Elastic compute solutions.md",
-    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
-    "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
-    "Domain 1 Design Secure Architectures/Appropriate data security controls.md",
     "AWS Terms and Acronyms.md",
     "Terms/AWS Terms and Acronyms.md",
     "Images",
@@ -279,8 +294,6 @@
     "Design cost-optimized database solutions.md",
     "Design cost-optimized compute solutions.md",
     "Design cost-optimized storage solutions.md",
-    "Determine high-performing data ingestion and transformation solutions.md",
-    "Determine high-performing and scalable network architectures.md",
     "Untitled.canvas"
   ]
 }

@@ -28,3 +28,32 @@
 - Fargate
 
 ![[Pasted image 20230825211655.png]]
+
+![[Pasted image 20230826175625.png]]
+
+![[Pasted image 20230826184649.png]]
+
+![[Pasted image 20230827161837.png]]
+
+![[Pasted image 20230827175031.png]]
+
+![[Pasted image 20230827175044.png]]
+
+![[Pasted image 20230827175102.png]]
+
+# Blocking IP Address
+![[Pasted image 20230827175139.png]]
+
+![[Pasted image 20230827175154.png]]
+
+![[Pasted image 20230827175707.png]]
+
+![[Pasted image 20230827175724.png]]
+
+![[Pasted image 20230827175743.png]]
+
+![[Pasted image 20230827175834.png]]
+
+![[Pasted image 20230827180041.png]]
+![[Pasted image 20230827180103.png]]
+![[Pasted image 20230827180125.png]]
