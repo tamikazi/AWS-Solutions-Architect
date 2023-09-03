@@ -8,121 +8,38 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a9e969e81e62dd7d",
+            "id": "dea565e8e75a9b91",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Summaries.md",
+                "file": "Tutorials Dojo Notes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "a3ba8f744d80c6b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ea5c1987a4a0ea87",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b40364260153d0e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "848c0595b048c4a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a31414ce01061073",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Domain 3 Design High-Performing Architectures/Database solutions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8c8902880036501d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Terms/Technical Terms.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "706dfd05ac5bd12b",
+            "id": "3c3dc9837cb384c8",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/Pasted image 20230826165114.png"
+                "file": "Images/2019-06-07_10-00-40-e7c750751ea701ec7b91cbeeb464f364.png"
               }
             }
           },
           {
-            "id": "3fb436ed056ff5d5",
+            "id": "f8a5c4224437365a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Extras/Extras.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/lifecycle-transitions-v2.png"
               }
-            }
-          },
-          {
-            "id": "dea565e8e75a9b91",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -151,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "organiza",
+                "query": "inspec",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -188,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Extras/Extras.md",
+                "file": "Tutorials Dojo Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -205,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Extras/Extras.md",
+                "file": "Tutorials Dojo Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -228,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Extras/Extras.md"
+                "file": "Tutorials Dojo Notes.md"
               }
             }
           }
@@ -249,38 +166,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3fb436ed056ff5d5",
+  "active": "dea565e8e75a9b91",
   "lastOpenFiles": [
-    "Extras/Extras.md",
-    "Images/Pasted image 20230826165114.png",
-    "Content Outline.md",
+    "Images/lifecycle-transitions-v2.png",
+    "Images/2019-06-07_10-00-40-e7c750751ea701ec7b91cbeeb464f364.png",
     "Summaries.md",
-    "Domain 2 Design Resilient Architectures/Highly available and fault tolerant architectures.md",
-    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
-    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
-    "Domain 1 Design Secure Architectures/Appropriate data security controls.md",
-    "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
-    "Images/Pasted image 20230827180125.png",
-    "Images/Pasted image 20230827180103.png",
-    "Images/Pasted image 20230827180041.png",
-    "Images/Pasted image 20230827175834.png",
-    "Images/Pasted image 20230827175743.png",
-    "Images/Pasted image 20230827175724.png",
-    "Images/Pasted image 20230827175707.png",
-    "Images/Pasted image 20230827175154.png",
-    "Images/Pasted image 20230827175139.png",
-    "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
+    "Tutorials Dojo Notes.md",
+    "Extras/Extras.md",
     "Domain 3 Design High-Performing Architectures/Database solutions.md",
-    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
+    "Images/2020-01-04_04-04-51-474a73beda1fc209d60e63ed8d226b6a.png",
+    "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
     "Domain 3 Design High-Performing Architectures/Data ingestion and transformation solutions.md",
-    "Domain 3 Design High-Performing Architectures/Elastic compute solutions.md",
+    "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
     "Untitled.md",
-    "Extras",
-    "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
-    "Domain 4 Design Cost-Optimized Architectures/Storage solutions.md",
+    "Images/s3-object-storage.png",
+    "Images/S3-1024x585.jpg",
+    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
+    "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
+    "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
+    "Domain 2 Design Resilient Architectures/Highly available and fault tolerant architectures.md",
+    "Domain 3 Design High-Performing Architectures/Elastic compute solutions.md",
+    "Images/AWS-Instance-Types.png",
+    "Images/2020-03-29_06-10-21-25e6fb0ac4acbec47824325e0c154564.png",
     "Domain 3 Design High-Performing Architectures/Scalable storage solutions.md",
+    "Images/SGNCL-latest.jpg",
+    "Images/Pasted image 20230826165114.png",
     "Terms/Technical Terms.md",
+    "Images/2020-01-11_09-55-33-102a3438068e9bb4c45fa670155c2044.png",
+    "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
+    "Images/ASG-default-policy-evaluation-flowchart.png",
+    "Domain 1 Design Secure Architectures/Appropriate data security controls.md",
     "Domain 4 Design Cost-Optimized Architectures/Cost-optimized database solutions.md",
+    "Content Outline.md",
+    "Extras",
+    "Domain 4 Design Cost-Optimized Architectures/Storage solutions.md",
     "AWS Terms and Acronyms.md",
     "Terms/AWS Terms and Acronyms.md",
     "Images",
@@ -293,7 +212,6 @@
     "Design cost-optimized network architectures.md",
     "Design cost-optimized database solutions.md",
     "Design cost-optimized compute solutions.md",
-    "Design cost-optimized storage solutions.md",
     "Untitled.canvas"
   ]
 }
