@@ -123,3 +123,39 @@
 - [[Scalable and loosely coupled architectures|NLB]] is capable of doing HTTP health checks
 - [[Secure workloads and applications|NACL]] requires you to specify ephemeral ports and you need to allow inbound and outbound since it's stateless
 - certificates must be imported into ACM before it can be associated 
+- RDP is 3389 - remote desktop access
+- warm up period can be defined in step scaling
+- **Network Access Analyzer** is for reports on unintended access to resources based on the security and compliance that is set
+- **Detective** collects log data from resources to identify the root cause of potential security issues or suspicious activity in your account
+- **Traffic Mirroring** can copy network traffic from an [[Scalable network architectures|ENI]]
+- CNAME cannot be used created for zone apex
+- IP of load balancers can change at any time
+- Parquet format is faster for querying
+
+# Flashcards
+## File Storage
+![[SOAF19-EFS-vs.-S3-vs.-EBS.png]]
+## EC2 Volumes
+![[SOAF10-SSD-vs-HDD.png]]
+![[SOAF9-EBS-Volume-Types.png]]
+![[SOAF5-RAID-0-vs.-RAID-1.png]]
+## Queues
+![[SQS-Standard-vs-FIFO.png]]
+## Disaster Recovery
+![[CSAPF10-AWS-Database-Disaster-Recovery-Matrix.png]]
+## Kinesis Shards
+![[DOPF11-Kinesis-Sharding-Strategies.png]]
+## Load Balancing
+![[ALB-NLB-CLB.png]]
+## NAT Gateway vs. Instance
+![[SOAF20-NAT-Gateway-vs.-NAT-Instance.png]]
+## Database Type Comparison
+![[SOAF17-SQL-relational-vs.-NoSQL-nonrelational-databases.png]]
+![[SOAF2-Relational-Database-Management-System-RDBMS-vs.-DynamoDB.png]]
+## Deployment Comparison
+![[SOAF22-Overview-of-CodeDeploy-Compute-Platforms.png]]
+## Secondary Index Comparison
+![[SOAF13-Global-Secondary-Index-GSI-vs.-Local-Secondary-Index-LSI.png]]
+## Multi AZ vs. Read Replicas
+![[SOAF3-Multi-AZ-Deployments-vs-Read-Replicas.png]]
+

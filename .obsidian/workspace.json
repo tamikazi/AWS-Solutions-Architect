@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Tutorials Dojo Notes.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -35,7 +35,7 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/lifecycle-transitions-v2.png"
+                "file": "Images/CSAPF10-AWS-Database-Disaster-Recovery-Matrix.png"
               }
             }
           }
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "inspec",
+                "query": "subnet",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 538.5
+    "width": 372.5,
+    "collapsed": true
   },
   "right": {
     "id": "49f7469ce002c59e",
@@ -168,33 +169,33 @@
   },
   "active": "dea565e8e75a9b91",
   "lastOpenFiles": [
+    "Images/CSAPF10-AWS-Database-Disaster-Recovery-Matrix.png",
+    "Images/ALB-NLB-CLB.png",
     "Images/lifecycle-transitions-v2.png",
-    "Images/2019-06-07_10-00-40-e7c750751ea701ec7b91cbeeb464f364.png",
-    "Summaries.md",
     "Tutorials Dojo Notes.md",
+    "Images/SOAF5-RAID-0-vs.-RAID-1.png",
+    "Images/SOAF2-Relational-Database-Management-System-RDBMS-vs.-DynamoDB.png",
+    "Images/SOAF3-Multi-AZ-Deployments-vs-Read-Replicas.png",
+    "Images/SOAF13-Global-Secondary-Index-GSI-vs.-Local-Secondary-Index-LSI.png",
+    "Images/SOAF22-Overview-of-CodeDeploy-Compute-Platforms.png",
+    "Images/SOAF17-SQL-relational-vs.-NoSQL-nonrelational-databases.png",
+    "Images/SOAF20-NAT-Gateway-vs.-NAT-Instance.png",
+    "Images/SOAF9-EBS-Volume-Types.png",
+    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
     "Extras/Extras.md",
+    "Summaries.md",
     "Domain 3 Design High-Performing Architectures/Database solutions.md",
-    "Images/2020-01-04_04-04-51-474a73beda1fc209d60e63ed8d226b6a.png",
     "Domain 4 Design Cost-Optimized Architectures/Network architectures.md",
     "Domain 3 Design High-Performing Architectures/Data ingestion and transformation solutions.md",
     "Domain 2 Design Resilient Architectures/Scalable and loosely coupled architectures.md",
     "Untitled.md",
-    "Images/s3-object-storage.png",
-    "Images/S3-1024x585.jpg",
-    "Domain 1 Design Secure Architectures/Secure workloads and applications.md",
     "Domain 1 Design Secure Architectures/Secure access to AWS resources.md",
     "Domain 3 Design High-Performing Architectures/Scalable network architectures.md",
     "Domain 2 Design Resilient Architectures/Highly available and fault tolerant architectures.md",
     "Domain 3 Design High-Performing Architectures/Elastic compute solutions.md",
-    "Images/AWS-Instance-Types.png",
-    "Images/2020-03-29_06-10-21-25e6fb0ac4acbec47824325e0c154564.png",
     "Domain 3 Design High-Performing Architectures/Scalable storage solutions.md",
-    "Images/SGNCL-latest.jpg",
-    "Images/Pasted image 20230826165114.png",
     "Terms/Technical Terms.md",
-    "Images/2020-01-11_09-55-33-102a3438068e9bb4c45fa670155c2044.png",
     "Domain 4 Design Cost-Optimized Architectures/Compute solutions.md",
-    "Images/ASG-default-policy-evaluation-flowchart.png",
     "Domain 1 Design Secure Architectures/Appropriate data security controls.md",
     "Domain 4 Design Cost-Optimized Architectures/Cost-optimized database solutions.md",
     "Content Outline.md",
